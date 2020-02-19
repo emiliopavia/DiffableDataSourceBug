@@ -1,0 +1,3 @@
+This sample project highlights an issue I'm facing with diffable data sources. The app is simple: there's a table view that shows a list of items, and a bar button item that changes the text of the first visible cell. Changes are made by modifying the underlying model, creating a new snapshot and applying it to the data source. When tapping the button you can choose whether or not using animation.
+
+When you don't animate the update, the cell is updated correctly. However when `animatingDifferences` is `true`, the `cellProvider` block in the data source isn't called. If you scroll the table view (making the cell disappear) and go back, the cell shows the updated value.
